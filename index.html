@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farida Eleshin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', 'Helvetica', 'Arial', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #212529;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            color: #ffffff;
+            font-size: 1.3rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #b58500;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 4rem 2rem;
+        }
+
+        .hero .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .hero-left {
+            flex: 0 0 300px;
+        }
+
+        .hero-image {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .hero-info {
+            text-align: center;
+        }
+
+        .hero-info h1 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            color: #212529;
+            letter-spacing: 1px;
+        }
+
+        .hero-info .title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #b58500;
+            margin-bottom: 0.25rem;
+        }
+
+        .hero-info .department {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-info .research-areas {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #212529;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-info .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .hero-info .contact-info span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-info .contact-info i {
+            margin-right: 0.5rem;
+            color: #666;
+        }
+
+        .hero-info .contact-info a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .hero-info .contact-info a:hover {
+            color: #b58500;
+        }
+
+        .hero-info .social-links {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .hero-info .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #212529;
+            color: white;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+
+        .hero-info .social-links a:hover {
+            background-color: #b58500;
+        }
+
+        .hero-about {
+            flex: 1;
+        }
+
+        .hero-about h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            color: #212529;
+            border-bottom: 3px solid #b58500;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .hero-about p {
+            margin-bottom: 1.25rem;
+            text-align: justify;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        section:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            color: #212529;
+            border-bottom: 3px solid #b58500;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        /* About Section */
+        .about-content p {
+            margin-bottom: 1.25rem;
+            text-align: justify;
+            font-size: 1.05rem;
+        }
+
+        /* Publications Section */
+        .publication {
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: white;
+            border-left: 4px solid #b58500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .publication h3 {
+            font-size: 1.2rem;
+            color: #212529;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .publication .authors {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication .venue {
+            color: #b58500;
+            font-weight: 600;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+
+        .publication .links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .publication .links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.4rem 1rem;
+            background-color: #212529;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .publication .links a:hover {
+            background-color: #495057;
+        }
+
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .news-item {
+            padding: 1.25rem;
+            background: white;
+            border-left: 4px solid #b58500;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .news-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .news-date {
+            display: inline-block;
+            background-color: #b58500;
+            color: white;
+            padding: 0.25rem 0.6rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .news-item h3 {
+            font-size: 1rem;
+            color: #212529;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .news-item p {
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .news-item .news-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #b58500;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            transition: color 0.3s;
+        }
+
+        .news-item .news-link:hover {
+            color: #8a6600;
+        }
+
+        .news-item .news-link i {
+            font-size: 0.75rem;
+        }
+
+        /* CV Section */
+        .cv-section {
+            margin-bottom: 3rem;
+        }
+
+        .cv-section h3 {
+            font-size: 1.5rem;
+            color: #212529;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            border-left: 4px solid #b58500;
+            padding-left: 1rem;
+        }
+
+        .cv-item {
+            margin-bottom: 2rem;
+            padding-left: 1rem;
+        }
+
+        .cv-item h4 {
+            font-size: 1.15rem;
+            color: #212529;
+            margin-bottom: 0.25rem;
+        }
+
+        .cv-item .institution {
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .cv-item .date {
+            color: #888;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-item p {
+            color: #555;
+        }
+
+        .cv-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #b58500;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .cv-download:hover {
+            background-color: #8a6600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #212529;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #212529;
+                padding: 1rem;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-left {
+                flex: 0 0 auto;
+                max-width: 300px;
+                width: 100%;
+            }
+
+            .hero-about {
+                width: 100%;
+            }
+
+            .hero-about h2 {
+                font-size: 1.75rem;
+            }
+
+            .hero-about p {
+                text-align: left;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">FARIDA ELESHIN</div>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul id="nav-menu">
+                <!-- <li><a href="#news">News</a></li> -->
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="Farida_s_CV_without_phone_number_IDD.pdf">CV</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <div class="hero-left">
+                <div class="hero-image">
+                    <img src="farida-headshot.jpg" alt="Headshot of Farida Eleshin">
+                </div>
+                <div class="hero-info">
+                    <h1>FARIDA ELESHIN</h1>
+                    <p class="title">PhD Student</p>
+                    <p class="department">Software and Information Systems</p>
+                    <p class="research-areas">HCI | Responsible AI | Social Computing</p>
+                    
+                    <div class="contact-info">
+                        <span>
+                            <i class="fa-solid fa-envelope"></i>
+                            <a href="mailto:feleshin@charlotte.edu">feleshin@charlotte.edu</a>
+                        </span>
+                        <span>
+                            <i class="fa-solid fa-location-dot"></i>
+                            Woodward 300
+                        </span>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/citations?hl=en&user=ooPB7r4AAAAJ" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+                        <a href="https://www.linkedin.com/in/farida-eleshin-b20b60171/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                        <!-- <a href="#" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a> -->
+                        <a href="https://github.com/FARIDAblaq" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-about">
+                <h2>About</h2>
+                <p>
+                    I design technologies, frameworks, and policies that promote <strong>equity</strong>, <strong>responsibility</strong>, and <strong>accountability</strong> in computing.
+                    My work takes a <strong>human-centered</strong> approach to understand how people—particularly underserved communities—interact with digital systems. 
+                    I explore the <strong>security</strong> and <strong>privacy</strong> challenges, values, and practices that shape technology adoption and its impact on society.
+                </p>
+                <p>
+                    Drawing on insights from <strong>Human-Computer Interaction</strong>, <strong>Responsible AI</strong>, <strong>social computing</strong>, <strong>AI governance</strong>, <strong>ethics</strong>, 
+                    and <strong>security and privacy</strong> research, I create <strong>socio-technical</strong> interventions that address inequities and foster responsible technology use. 
+                    These include tools for equitable access, responsible AI audits, digital literacy platforms, and community-driven systems for safety and trust.
+                </p>
+                <p>
+                    Ultimately, my goal is to amplify user voices in the design and governance of emerging technologies and to inform institutional practices that make computing more just,
+                    inclusive, and socially accountable. I am advised by <a href="https://corifaklaris.com/" style="color: #b58500; font-weight: 600;">Cori Faklaris</a> and part of the 
+                    <a href="https://spexlab.org/" style="color: #b58500; font-weight: 600;">Security and Privacy Experiences (SPEX)</a> Lab.
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <h2>Publications</h2>
+
+        <div class="publication">
+            <h3>Of Secrets and Seedphrases: Conceptual Misunderstandings and Security Challenges for Seed Phrase Management among Cryptocurrency Users</h3>
+            <p class="authors" ><strong style="color: #b58500;" >Farida Eleshin</strong>, Qi Sun, Mengzhe Ye, Sauvik Das, Jason Hong</p>
+            <p class="venue">ACM CHI 2025</p>
+            <div class="links">
+                <a href="https://dl.acm.org/doi/full/10.1145/3706598.3713209"><i class="fas fa-file-pdf"></i> Paper</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>Your Robot Might Be Inadvertently or Deliberately Spying on You: A Critical Analysis of Privacy Practices in the Robotics Industry.</h3>
+            <p class="authors"><strong style="color: #b58500;">Farida Eleshin</strong>,  Patrick Iradukunda, David Ishimwe Ruberamitwe, Eric Ishimwe</p>
+            <p class="venue">ICISSP 2024</p>
+            <div class="links">
+                <a href="https://www.scitepress.org/Papers/2024/124222/124222.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>Emerging Trends In Information Security Policy Regulation And Their Potential Impact On Organizations In Rwanda</h3>
+            <p class="authors"><strong style="color: #b58500;">Farida Eleshin</strong>,Akpene Diata Hoggar, Fidelis Ephraim Ayite, Nana Ama Atombo-Sackey, Augustine Ayekor, Ines Agasaro Ituze, Innocent Ingabire, Ernest Mucyo Nzivugira</p>
+            <p class="venue">TELFOR 2023</p>
+            <div class="links">
+                <a href="https://ieeexplore.ieee.org/abstract/document/10372791"><i class="fas fa-file-pdf"></i> Paper</a>
+            </div>
+        </div>
+
+        <div class="publication">
+            <h3>Health Behaviours and Vaccination Predictions</h3>
+            <p class="authors"><strong style="color: #b58500;">Farida Eleshin</strong></p>
+            <p class="venue">Thesis 2022</p>
+            <div class="links">
+                <a href="https://air.ashesi.edu.gh/items/b8618a6c-d2f1-4252-9324-1d35c8db9cf7"><i class="fas fa-file-pdf"></i> Paper</a>
+            </div>
+        </div>
+
+        <!-- Whitepapers, Workshops and Posters -->
+        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; color: #555;">Whitepapers, Workshops & Posters</h3>
+
+        <div class="publication">
+            <h3>AI and the Future of Work in Africa White Paper</h3>
+            <!-- <p class="authors"><strong>Farida Eleshin</strong></p> -->
+            <p class="venue">Microsoft Research, Kenya</p>
+            <div class="links">
+                <a href="https://arxiv.org/abs/2411.10091"><i class="fas fa-file-pdf"></i> PDF</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" style="background-color: #f8f9fa;">
+        <h2>Contact</h2>
+        <div class="about-content">
+            <p>
+                I'm always interested in connecting with researchers, practitioners, and community members working at the intersection of technology and social justice.
+                Feel free to reach out if you'd like to discuss potential collaborations, research opportunities, or just chat about responsible computing.
+            </p>
+            <div class="contact-info" style="margin-top: 2rem;">
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:feleshin@charlotte.edu">feleshin@charlotte.edu</a>
+                </span>
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Woodward 300, UNC Charlotte
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Farida Eleshin. All rights reserved.</p>
+        <p>Last updated: February 2026</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('nav-menu').classList.remove('active');
+                }
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const menu = document.getElementById('nav-menu');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (!nav.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+
+</body>
+</html>
