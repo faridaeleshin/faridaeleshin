@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Farida Eleshin</title>
+    <title>Farida Eleshin - PhD Student</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
@@ -237,121 +237,224 @@
         }
 
         /* Publications Section */
+        .pub-year-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 1.75rem;
+            align-items: flex-start;
+        }
+
+        .pub-year-label {
+            flex-shrink: 0;
+            width: 48px;
+            font-size: 0.8rem;
+            font-weight: 900;
+            color: #b58500;
+            padding-top: 0.2rem;
+            text-align: right;
+            letter-spacing: 0.5px;
+        }
+
+        .pub-year-items {
+            flex: 1;
+            border-left: 2px solid #e9ecef;
+            padding-left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
         .publication {
-            margin-bottom: 2.5rem;
-            padding: 1.5rem;
-            background: white;
-            border-left: 4px solid #b58500;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 0.1rem;
         }
 
         .publication h3 {
-            font-size: 1.2rem;
+            font-size: 1rem;
             color: #212529;
-            margin-bottom: 0.5rem;
             font-weight: 700;
+            line-height: 1.4;
+            margin: 0 0 0.15rem 0;
         }
 
         .publication .authors {
-            color: #666;
-            font-size: 0.95rem;
-            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #555;
+            margin: 0 0 0.2rem 0;
+            line-height: 1.4;
+        }
+
+        .publication .authors strong {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .publication .pub-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            font-size: 0.88rem;
+            font-weight: 700;
         }
 
         .publication .venue {
             color: #b58500;
-            font-weight: 600;
-            font-style: italic;
-            margin-bottom: 0.75rem;
+            margin: 0;
         }
 
-        .publication .links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .publication .pub-dot {
+            color: #aaa;
+            font-size: 1rem;
+            line-height: 1;
         }
 
-        .publication .links a {
+        .publication .pub-link {
+            color: #333;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.88rem;
+            letter-spacing: 0.3px;
+            transition: color 0.2s;
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            padding: 0.4rem 1rem;
-            background-color: #212529;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            transition: background-color 0.3s;
+            gap: 0.25rem;
         }
 
-        .publication .links a:hover {
-            background-color: #495057;
+        .publication .pub-link:hover {
+            color: #b58500;
         }
 
-        /* News Section */
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+        .publication .pub-link i {
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 768px) {
+            .pub-year-group {
+                flex-direction: column;
+                gap: 0.4rem;
+            }
+
+            .pub-year-label {
+                width: auto;
+                text-align: left;
+                font-size: 0.9rem;
+            }
+
+            .pub-year-items {
+                padding-left: 1rem;
+            }
+        }
+
+        /* ── News Section ── */
+        .news-scroll-container {
+            position: relative;
+        }
+
+        .news-scroll {
+            display: flex;
+            flex-direction: column;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            background: white;
+            scrollbar-width: thin;
+            scrollbar-color: #b58500 #f0f0f0;
+        }
+
+        .news-scroll::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .news-scroll::-webkit-scrollbar-track {
+            background: #f0f0f0;
+        }
+
+        .news-scroll::-webkit-scrollbar-thumb {
+            background-color: #b58500;
+            border-radius: 3px;
         }
 
         .news-item {
-            padding: 1.25rem;
-            background: white;
-            border-left: 4px solid #b58500;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            padding: 0.8rem 1.25rem;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.15s;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
         }
 
         .news-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            background-color: #fffbf0;
         }
 
         .news-date {
-            display: inline-block;
-            background-color: #b58500;
-            color: white;
-            padding: 0.25rem 0.6rem;
-            border-radius: 3px;
-            font-size: 0.8rem;
+            flex-shrink: 0;
+            font-size: 0.70rem;
             font-weight: 700;
-            margin-bottom: 0.6rem;
+            color: #b58500;
+            width: 58px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
         }
 
-        .news-item h3 {
-            font-size: 1rem;
-            color: #212529;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
+        .news-content {
+            flex: 1;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            flex-wrap: wrap;
             line-height: 1.4;
         }
 
-        .news-item p {
-            color: #555;
-            line-height: 1.6;
+        .news-item h3 {
             font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            color: #212529;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .news-divider {
+            color: #ccc;
+            font-size: 0.8rem;
+        }
+
+        .news-item p {
+            color: #666;
+            font-size: 0.88rem;
+            line-height: 1.4;
+            margin: 0;
         }
 
         .news-item .news-link {
+            flex-shrink: 0;
             display: inline-flex;
             align-items: center;
-            gap: 0.3rem;
+            gap: 0.25rem;
             color: #b58500;
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.85rem;
-            margin-top: 0.25rem;
-            transition: color 0.3s;
+            font-weight: 700;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            transition: color 0.2s;
         }
 
         .news-item .news-link:hover {
             color: #8a6600;
         }
 
-        .news-item .news-link i {
+        .news-scroll-hint {
+            text-align: right;
             font-size: 0.75rem;
+            color: #aaa;
+            margin-top: 0.4rem;
         }
 
         /* CV Section */
@@ -469,10 +572,6 @@
                 text-align: left;
             }
 
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
-
             section {
                 padding: 3rem 1.5rem;
             }
@@ -484,21 +583,20 @@
     <!-- Navigation -->
     <nav>
         <div class="container">
-            <div class="logo">FARIDA ELESHIN</div>
+            <div class="logo"><a href="#home">FARIDA ELESHIN</a></div>
             <button class="mobile-menu-btn" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
             </button>
             <ul id="nav-menu">
-                <!-- <li><a href="#news">News</a></li> -->
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="Farida_s_CV_without_phone_number_IDD.pdf">CV</a></li>
-                <li><a href="#contact">Contact</a></li>
+                 <li><a href="https://scholar.google.com/citations?hl=en&user=ooPB7r4AAAAJ" target="_blank">Publications</a></li>
+                <li><a href="Farida_s_CV_without_phone_number_IDD.pdf" target="_blank">CV</a></li>
+                <li><a href="https://github.com/FARIDAblaq" target="_blank">Github</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <div class="hero">
+    <div class="hero" id="home">
         <div class="container">
             <div class="hero-left">
                 <div class="hero-image">
@@ -522,10 +620,9 @@
                     </div>
 
                     <div class="social-links">
-                        <a href="https://scholar.google.com/citations?hl=en&user=ooPB7r4AAAAJ" title="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
-                        <a href="https://www.linkedin.com/in/farida-eleshin-b20b60171/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                        <!-- <a href="#" title="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a> -->
-                        <a href="https://github.com/FARIDAblaq" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://scholar.google.com/citations?hl=en&user=ooPB7r4AAAAJ" title="Google Scholar" target="_blank"><i class="fa-brands fa-google-scholar"></i></a>
+                        <a href="https://www.linkedin.com/in/farida-eleshin-b20b60171/" title="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/FARIDAblaq" title="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -538,8 +635,8 @@
                     I explore the <strong>security</strong> and <strong>privacy</strong> challenges, values, and practices that shape technology adoption and its impact on society.
                 </p>
                 <p>
-                    Drawing on insights from <strong>Human-Computer Interaction</strong>, <strong>Responsible AI</strong>, <strong>social computing</strong>, <strong>AI governance</strong>, <strong>ethics</strong>, 
-                    and <strong>security and privacy</strong> research, I create <strong>socio-technical</strong> interventions that address inequities and foster responsible technology use. 
+                    Drawing on insights from <strong>Human-Computer Interaction</strong>, <strong>Responsible AI</strong>, <strong>Social Computing</strong>, <strong>AI Governance</strong>, <strong>Ethics</strong>, 
+                    and <strong>Security and Privacy</strong> research, I create <strong>socio-technical</strong> interventions that address inequities and foster responsible technology use. 
                     These include tools for equitable access, responsible AI audits, digital literacy platforms, and community-driven systems for safety and trust.
                 </p>
                 <p>
@@ -551,117 +648,190 @@
         </div>
     </div>
 
+    <!-- News Section -->
+    <section id="news">
+        <h2>News</h2>
+        <div class="news-scroll-container">
+            <div class="news-scroll">
+
+                <!-- <div class="news-item">
+                    <span class="news-date">Feb 2024</span>
+                    <div class="news-content">
+                        <h3>🎉 Paper Accepted to CHI 2024</h3>
+                        <span class="news-divider">—</span>
+                        <p>Our paper on privacy and security challenges in underserved communities was accepted to CHI 2024.</p>
+                    </div>
+                </div> -->
+
+                <!-- <div class="news-item">
+                    <span class="news-date">Jan 2024</span>
+                    <div class="news-content">
+                        <h3>📚 Completed Doctoral Candidacy</h3>
+                        <span class="news-divider">—</span>
+                        <p>Officially advanced to PhD candidacy! Excited to dive deeper into dissertation research.</p>
+                    </div>
+                </div> -->
+
+                <!-- <div class="news-item">
+                    <span class="news-date">Dec 2023</span>
+                    <div class="news-content">
+                        <h3>🏆 Best Poster Award at SOUPS</h3>
+                        <span class="news-divider">—</span>
+                        <p>Our poster "Community-Driven Approaches to Digital Safety" won Best Poster Award at SOUPS 2023.</p>
+                        <a href="#" class="news-link">View Poster <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div> -->
+
+                <!-- <div class="news-item">
+                    <span class="news-date">Nov 2023</span>
+                    <div class="news-content">
+                        <h3>🎤 Invited Talk at Tech Summit</h3>
+                        <span class="news-divider">—</span>
+                        <p>Delivered invited talk on "Centering Equity in AI Development" at Tech for Social Good Summit.</p>
+                    </div>
+                </div> -->
+
+                <div class="news-item">
+                    <span class="news-date">Mar 2026</span>
+                    <div class="news-content">
+                        <h3>🎉 Attended CRA Grad Cohort Worskhop 2026</h3>
+                        <span class="news-divider">—</span>
+                        <p>Honored to have attended the 2026 CRA Grad cohort workshop for PhD students all over the US. </p>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <span class="news-date">Aug 2025</span>
+                    <div class="news-content">
+                        <h3>📚 Commenced my PhD in SIS </h3>
+                        <span class="news-divider">—</span>
+                        <p>Started my PhD in Software and Information Systems at the University of North Carolina, Charlotte.</p>
+                    </div>
+                </div>
+
+                <!-- <div class="news-item">
+                    <span class="news-date">Aug 2025</span>
+                    <div class="news-content">
+                        <h3>🎉 First First-Author Paper!</h3>
+                        <span class="news-divider">—</span>
+                        <p>"Digital Literacy and Technology Adoption in Marginalized Populations" published at CSCW 2023.</p>
+                        <a href="#" class="news-link">Read Paper <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div> -->
+
+            </div>
+            <!-- <p class="news-scroll-hint"><i class="fas fa-chevron-down" style="font-size:0.65rem;"></i> scroll for more</p> -->
+        </div>
+    </section>
 
     <!-- Publications Section -->
     <section id="publications">
         <h2>Publications</h2>
 
-        <div class="publication">
-            <h3>Of Secrets and Seedphrases: Conceptual Misunderstandings and Security Challenges for Seed Phrase Management among Cryptocurrency Users</h3>
-            <p class="authors" ><strong style="color: #b58500;" >Farida Eleshin</strong>, Qi Sun, Mengzhe Ye, Sauvik Das, Jason Hong</p>
-            <p class="venue">ACM CHI 2025</p>
-            <div class="links">
-                <a href="https://dl.acm.org/doi/full/10.1145/3706598.3713209"><i class="fas fa-file-pdf"></i> Paper</a>
+        <!-- 2025 -->
+        <div class="pub-year-group">
+            <div class="pub-year-label">2025</div>
+            <div class="pub-year-items">
+                <div class="publication">
+                    <h3>Of Secrets and Seedphrases: Conceptual Misunderstandings and Security Challenges for Seed Phrase Management among Cryptocurrency Users</h3>
+                    <p class="authors"><strong>Farida Eleshin</strong>, Qi Sun, Mengzhe Ye, Sauvik Das, Jason Hong</p>
+                    <div class="pub-row">
+                        <span class="venue">ACM CHI 2025</span>
+                        <span class="pub-dot">●</span>
+                        <a class="pub-link" href="https://dl.acm.org/doi/full/10.1145/3706598.3713209">PAPER</a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="publication">
-            <h3>Your Robot Might Be Inadvertently or Deliberately Spying on You: A Critical Analysis of Privacy Practices in the Robotics Industry.</h3>
-            <p class="authors"><strong style="color: #b58500;">Farida Eleshin</strong>,  Patrick Iradukunda, David Ishimwe Ruberamitwe, Eric Ishimwe</p>
-            <p class="venue">ICISSP 2024</p>
-            <div class="links">
-                <a href="https://www.scitepress.org/Papers/2024/124222/124222.pdf"><i class="fas fa-file-pdf"></i> Paper</a>
+        <!-- 2024 -->
+        <div class="pub-year-group">
+            <div class="pub-year-label">2024</div>
+            <div class="pub-year-items">
+                <div class="publication">
+                    <h3>Your Robot Might Be Inadvertently or Deliberately Spying on You: A Critical Analysis of Privacy Practices in the Robotics Industry</h3>
+                    <p class="authors"><strong>Farida Eleshin</strong>, Patrick Iradukunda, David Ishimwe Ruberamitwe, Eric Ishimwe</p>
+                    <div class="pub-row">
+                        <span class="venue">ICISSP 2024</span>
+                        <span class="pub-dot">●</span>
+                        <a class="pub-link" href="https://www.scitepress.org/Papers/2024/124222/124222.pdf">PAPER</a>
+                    </div>
+                </div>
+
+                <div class="publication">
+                    <h3>AI and the Future of Work in Africa White Paper</h3>
+                    <p class="authors"><strong>Farida Eleshin</strong> et al.</p>
+                    <div class="pub-row">
+                        <span class="venue">Microsoft Research, Kenya</span>
+                        <span class="pub-dot">●</span>
+                        <a class="pub-link" href="https://arxiv.org/abs/2411.10091">PAPER</a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="publication">
-            <h3>Emerging Trends In Information Security Policy Regulation And Their Potential Impact On Organizations In Rwanda</h3>
-            <p class="authors"><strong style="color: #b58500;">Farida Eleshin</strong>,Akpene Diata Hoggar, Fidelis Ephraim Ayite, Nana Ama Atombo-Sackey, Augustine Ayekor, Ines Agasaro Ituze, Innocent Ingabire, Ernest Mucyo Nzivugira</p>
-            <p class="venue">TELFOR 2023</p>
-            <div class="links">
-                <a href="https://ieeexplore.ieee.org/abstract/document/10372791"><i class="fas fa-file-pdf"></i> Paper</a>
+        <!-- 2023 -->
+        <div class="pub-year-group">
+            <div class="pub-year-label">2023</div>
+            <div class="pub-year-items">
+                <div class="publication">
+                    <h3>Emerging Trends In Information Security Policy Regulation And Their Potential Impact On Organizations In Rwanda</h3>
+                    <p class="authors"><strong>Farida Eleshin</strong>, Akpene Diata Hoggar, Fidelis Ephraim Ayite, Nana Ama Atombo-Sackey, Augustine Ayekor, Ines Agasaro Ituze, Innocent Ingabire, Ernest Mucyo Nzivugira</p>
+                    <div class="pub-row">
+                        <span class="venue">TELFOR 2023</span>
+                        <span class="pub-dot">●</span>
+                        <a class="pub-link" href="https://ieeexplore.ieee.org/abstract/document/10372791">PAPER</a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="publication">
-            <h3>Health Behaviours and Vaccination Predictions</h3>
-            <p class="authors"><strong style="color: #b58500;">Farida Eleshin</strong></p>
-            <p class="venue">Thesis 2022</p>
-            <div class="links">
-                <a href="https://air.ashesi.edu.gh/items/b8618a6c-d2f1-4252-9324-1d35c8db9cf7"><i class="fas fa-file-pdf"></i> Paper</a>
+        <!-- 2022 -->
+        <div class="pub-year-group">
+            <div class="pub-year-label">2022</div>
+            <div class="pub-year-items">
+                <div class="publication">
+                    <h3>Health Behaviours and Vaccination Predictions</h3>
+                    <p class="authors"><strong>Farida Eleshin</strong></p>
+                    <div class="pub-row">
+                        <span class="venue">Thesis 2022</span>
+                        <span class="pub-dot">●</span>
+                        <a class="pub-link" href="https://air.ashesi.edu.gh/items/b8618a6c-d2f1-4252-9324-1d35c8db9cf7">PAPER</a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Whitepapers, Workshops and Posters -->
-        <h3 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 1.5rem; color: #555;">Whitepapers, Workshops & Posters</h3>
-
-        <div class="publication">
-            <h3>AI and the Future of Work in Africa White Paper</h3>
-            <!-- <p class="authors"><strong>Farida Eleshin</strong></p> -->
-            <p class="venue">Microsoft Research, Kenya</p>
-            <div class="links">
-                <a href="https://arxiv.org/abs/2411.10091"><i class="fas fa-file-pdf"></i> PDF</a>
-            </div>
-        </div>
     </section>
 
 
-    <!-- Contact Section -->
-    <section id="contact" style="background-color: #f8f9fa;">
-        <h2>Contact</h2>
-        <div class="about-content">
-            <p>
-                I'm always interested in connecting with researchers, practitioners, and community members working at the intersection of technology and social justice.
-                Feel free to reach out if you'd like to discuss potential collaborations, research opportunities, or just chat about responsible computing.
-            </p>
-            <div class="contact-info" style="margin-top: 2rem;">
-                <span>
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto:feleshin@charlotte.edu">feleshin@charlotte.edu</a>
-                </span>
-                <span>
-                    <i class="fa-solid fa-location-dot"></i>
-                    Woodward 300, UNC Charlotte
-                </span>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Farida Eleshin. All rights reserved.</p>
-        <p>Last updated: February 2026</p>
+        <p>&copy; 2026 Farida Eleshin.</p>
+        <!-- <p>Last updated: March 2026</p> -->
     </footer>
 
     <script>
-        // Mobile menu toggle
         function toggleMenu() {
             const menu = document.getElementById('nav-menu');
             menu.classList.toggle('active');
         }
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu if open
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     document.getElementById('nav-menu').classList.remove('active');
                 }
             });
         });
 
-        // Close mobile menu when clicking outside
         document.addEventListener('click', function(event) {
             const nav = document.querySelector('nav');
             const menu = document.getElementById('nav-menu');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            
             if (!nav.contains(event.target)) {
                 menu.classList.remove('active');
             }
